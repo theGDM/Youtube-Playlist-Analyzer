@@ -21,7 +21,7 @@ other hand Web scraping (or data scraping) is a technique used to collect conten
 **Operating System:** Windows
 
 ## Commands
-  > **node index.js \<playlist path\>** <br /> 
+  > ### node index.js \<playlist path\>** <br /> 
     To run the script, for the provided path of the youtube playlist.
 
   
