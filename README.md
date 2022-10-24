@@ -11,7 +11,7 @@ other hand Web scraping (or data scraping) is a technique used to collect conten
 - With the help of this project a user can get all the information like, playlist name, total videos, total views, title and duration of each and every 
   video of that particular playlist.
 - After processing the whole playlist it will generate the information in PDF format
-- User has options to change fonts and images as per his/her need.
+- User has the options to change fonts and images as per his/her need.
 
 ## Tech Stack
 
@@ -22,7 +22,7 @@ other hand Web scraping (or data scraping) is a technique used to collect conten
 **Operating System:** Windows
 
 ## Commands
-  > ### node index.js \<playlist path\>** <br /> 
+  > ### node index.js \<playlist path\> <br /> 
     To run the script, for the provided path of the youtube playlist.
 
   
@@ -34,7 +34,7 @@ other hand Web scraping (or data scraping) is a technique used to collect conten
   ![Screenshot 2022-10-24 120143](https://user-images.githubusercontent.com/89511377/197462637-1e87b591-7805-4067-a7e8-ed36ba6062ed.jpg)
   ![Screenshot 2022-10-24 120250](https://user-images.githubusercontent.com/89511377/197462662-143ee1fd-2713-48fb-87dd-ce49141e3a90.jpg)
   
-  > ### Total Watch Time calculating script!**
+  > ### Total Watch Time calculating script
   ![Screenshot 2022-10-24 122243](https://user-images.githubusercontent.com/89511377/197465085-3923e6ec-dd95-40d9-80b3-a57e6cf6d6b8.jpg)
 
   > ### PDF file "output.pdf" genrated, after processing the playlist
