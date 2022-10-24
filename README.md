@@ -27,7 +27,7 @@ other hand Web scraping (or data scraping) is a technique used to collect conten
 
   
 ## Website Demo
-  > ### Folders and Files structure file <br /> 
+  > ### Folders and Files structure <br /> 
   ![Screenshot 2022-10-24 120454](https://user-images.githubusercontent.com/89511377/197462868-7f45ad0e-73c8-4523-8940-1c665bb0943e.jpg)
 
   > ### index.js file**
