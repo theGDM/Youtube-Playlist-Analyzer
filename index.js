@@ -37,6 +37,7 @@ let linKOfPL = inputArr[0];
             currVideosInOneScroll = await getCurrVideosLen();
         }
 
+        //Pdf related task
         let finalList = await getStats();
         let ans = calculate(finalList);
         // Create a document
@@ -45,9 +46,9 @@ let linKOfPL = inputArr[0];
         doc.pipe(fs.createWriteStream(`${__dirname}/output.pdf`));
 
         // Add an image, constrain it to a given size, and center it vertically and horizontally
-        doc.image(`${__dirname}\\images\\YTLogo.png`, 0, 15, { height: 200 });
+        doc.image(`${__dirname}\\images\\YTLogo.png`, 0, 15, { height: 200 }); //stretch
 
-        doc.font(`${__dirname}\\fonts\\AmericanCaptain-MdEY.otf`).fontSize(30).text(name).moveDown(0.5);
+        doc.font(`${__dirname}\\fonts\\AmericanCaptain-MdEY.otf`).fontSize(30).text(name, 72, 220).moveDown(0.5);
         doc.font(`${__dirname}\\fonts\\Louis George Cafe.ttf`).fontSize(15).text(JSON.stringify(finalList)).moveDown(0.4);
 
 
