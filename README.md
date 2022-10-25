@@ -6,7 +6,7 @@ other hand Web scraping (or data scraping) is a technique used to collect conten
 
 
 ## Features
-- Now one of the main benefit of using this youtube playlist analyzer over others, is that it can process n number of videos of any particular playlist
+- Now one of the main benefits of using this youtube playlist analyzer over others, is that it can process n number of videos of any particular playlist
   while other can only process at max 500 videos at a time.
 - With the help of this project a user can get all the information like, playlist name, total videos, total views, title and duration of each and every 
   video of that particular playlist.
@@ -30,7 +30,7 @@ other hand Web scraping (or data scraping) is a technique used to collect conten
   > ### Folders and Files structure <br /> 
   ![Screenshot 2022-10-24 120454](https://user-images.githubusercontent.com/89511377/197462868-7f45ad0e-73c8-4523-8940-1c665bb0943e.jpg)
 
-  > ### index.js file**
+  > ### index.js file
   ![Screenshot 2022-10-24 120143](https://user-images.githubusercontent.com/89511377/197462637-1e87b591-7805-4067-a7e8-ed36ba6062ed.jpg)
   ![Screenshot 2022-10-24 120250](https://user-images.githubusercontent.com/89511377/197462662-143ee1fd-2713-48fb-87dd-ce49141e3a90.jpg)
   
