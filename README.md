@@ -1,6 +1,6 @@
 # Youtube Playlist Analyzer
 This is a Web Automation project which also uses Web Scraping.<br/>
-**Now what is the Web Automation and Web Scraping?** <br />
+**Now what is the <ins> Web Automation </ins> and <ins>Web Scraping</ins>?** <br />
 Web automation is the concept of letting software robots perform pre-defined actions, tasks, and processes on a web browser or web application, and on the 
 other hand Web scraping (or data scraping) is a technique used to collect content and data from the internet. This data is usually saved in a local file so that it can be manipulated and analyzed as needed.
 
@@ -15,11 +15,11 @@ other hand Web scraping (or data scraping) is a technique used to collect conten
 
 ## Tech Stack
 
-**Client-side Languages:** JavaScript, Node.js, Puppeteer.js, Pdfkit library
+**`Client-side Languages:`** JavaScript, Node.js, Puppeteer.js, Pdfkit library
 
-**Cloud Deployment Plateforms:** GitHub
+**`Cloud Deployment Plateforms:`** GitHub
 
-**Operating System:** Windows
+**`Operating System:`** Windows
 
 ## Commands
   > ### node index.js \<playlist path\> <br /> 
