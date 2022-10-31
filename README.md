@@ -15,7 +15,7 @@ other hand Web scraping (or data scraping) is a technique used to collect conten
 
 ## Tech Stack
 
-**`Client-side Languages:`** JavaScript, Node.js, Puppeteer.js, Pdfkit library
+**`Client-side:`** JavaScript, Node.js, Puppeteer.js, Pdfkit library
 
 **`Cloud Deployment Plateforms:`** GitHub
 
