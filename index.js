@@ -23,17 +23,15 @@ let linKOfPL = inputArr[0];
         await cTab.goto(linKOfPL);
         let name = await cTab.evaluate(function (select) {
             return document.querySelector(select).innerText;
-        }, '#items #title a'); //2nd argument is actually the argument to the function which the first argument
+        }, '.style-scope.yt-dynamic-sizing-formatted-string.yt-sans-20'); //2nd argument is actually the argument to the function which the first argument
 
         //getting the stats of the playlist
-        let stats = await cTab.evaluate(getData, 'div#stats .style-scope.ytd-playlist-sidebar-primary-info-renderer');
-        let totalVideos = parseInt(stats.noOfVideos.split(" ")[0]);
-        let totalViews = stats.noOfViews.split(" ")[0];
+        let totalVideos = await cTab.evaluate(getTotalVideos, '.byline-item.style-scope.ytd-playlist-byline-renderer > span:first-child');
+        totalVideos = parseInt(totalVideos);
 
         let currVideosInOneScroll = await getCurrVideosLen();
-
         while (totalVideos - currVideosInOneScroll >= 1) {
-            await scrollToBottom()
+            await scrollToBottom();
             currVideosInOneScroll = await getCurrVideosLen();
         }
 
@@ -54,7 +52,7 @@ let linKOfPL = inputArr[0];
 
         //append calculation like total no of videos, total watch time, no of views till now
         doc.font(`${__dirname}\\fonts\\EnceladusDemibold-mL18a.otf`).fontSize(20).text(`Total Videos : ${totalVideos}`).moveDown(0.1);
-        doc.font(`${__dirname}\\fonts\\EnceladusDemibold-mL18a.otf`).fontSize(20).text(`Total Views : ${totalViews}`).moveDown(0.1);
+        // doc.font(`${__dirname}\\fonts\\EnceladusDemibold-mL18a.otf`).fontSize(20).text(`Total Views : ${totalViews}`).moveDown(0.1);
         doc.font(`${__dirname}\\fonts\\EnceladusDemibold-mL18a.otf`).fontSize(20).text(`Total Time to Finish Playlist : ${ans}`).moveDown(0.1);
 
         // Finalize PDF file
@@ -64,19 +62,12 @@ let linKOfPL = inputArr[0];
     }
 })();
 
-function getData(selector) {
-    let allElemets = document.querySelectorAll(selector);
-    let noOfVideos = allElemets[0].innerText;
-    let noOfViews = allElemets[1].innerText;
-
-    return {
-        noOfVideos,
-        noOfViews
-    }
+function getTotalVideos(selector) {
+    return document.querySelector(selector).innerText;
 }
 
 async function getCurrVideosLen() {
-    let length = await cTab.evaluate(getLength, '#container > #thumbnail span.style-scope.ytd-thumbnail-overlay-time-status-renderer');
+    let length = await cTab.evaluate(getLength, '#contents ytd-playlist-video-renderer .yt-simple-endpoint.inline-block.style-scope.ytd-thumbnail');
     return length;
 }
 
@@ -94,7 +85,7 @@ async function scrollToBottom() {
 }
 
 async function getStats() {
-    let list = await cTab.evaluate(getNameAndDuration, 'ytd-playlist-video-renderer  #video-title', '.style-scope.ytd-section-list-renderer #thumbnail #overlays #text');
+    let list = await cTab.evaluate(getNameAndDuration, 'ytd-playlist-video-renderer #video-title', 'ytd-playlist-video-renderer #thumbnail #overlays #text');
     return list;
 }
 
