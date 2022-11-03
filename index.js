@@ -23,7 +23,7 @@ let linKOfPL = inputArr[0];
         await cTab.goto(linKOfPL);
         let name = await cTab.evaluate(function (select) {
             return document.querySelector(select).innerText;
-        }, '.style-scope.yt-dynamic-sizing-formatted-string.yt-sans-20'); //2nd argument is actually the argument to the function which the first argument
+        }, '.style-scope.yt-dynamic-sizing-formatted-string.yt-sans-22'); //2nd argument is actually the argument to the function which the first argument
 
         //getting the stats of the playlist
         let totalVideos = await cTab.evaluate(getTotalVideos, '.byline-item.style-scope.ytd-playlist-byline-renderer > span:first-child');
