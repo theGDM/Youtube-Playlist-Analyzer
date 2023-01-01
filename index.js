@@ -22,13 +22,14 @@ let linKOfPL = inputArr[0];
         cTab = allTabsArr[0];
         await cTab.goto(linKOfPL);
         let name = await cTab.evaluate(function (select) {
-            return document.querySelector(select).innerText;
-        }, '.style-scope.yt-dynamic-sizing-formatted-string.yt-sans-22'); //2nd argument is actually the argument to the function which the first argument
+            return document.querySelector(select)?.innerText;
+        }, '.style-scope.yt-dynamic-sizing-formatted-string.yt-sans-20'); //2nd argument is actually the argument to the function which the first argument
 
         //getting the stats of the playlist
         let totalVideos = await cTab.evaluate(getTotalVideos, '.byline-item.style-scope.ytd-playlist-byline-renderer > span:first-child');
         totalVideos = parseInt(totalVideos);
 
+        let totalViews = await cTab.evaluate(getTotalViews, '.metadata-stats.style-scope.ytd-playlist-byline-renderer .byline-item');
         let currVideosInOneScroll = await getCurrVideosLen();
         while (totalVideos - currVideosInOneScroll >= 1) {
             await scrollToBottom();
@@ -49,10 +50,10 @@ let linKOfPL = inputArr[0];
         doc.font(`${__dirname}\\fonts\\AmericanCaptain-MdEY.otf`).fontSize(30).text(name, 72, 220).moveDown(0.5);
         doc.font(`${__dirname}\\fonts\\Louis George Cafe.ttf`).fontSize(15).text(JSON.stringify(finalList)).moveDown(0.4);
 
-
+        
         //append calculation like total no of videos, total watch time, no of views till now
         doc.font(`${__dirname}\\fonts\\EnceladusDemibold-mL18a.otf`).fontSize(20).text(`Total Videos : ${totalVideos}`).moveDown(0.1);
-        // doc.font(`${__dirname}\\fonts\\EnceladusDemibold-mL18a.otf`).fontSize(20).text(`Total Views : ${totalViews}`).moveDown(0.1);
+        doc.font(`${__dirname}\\fonts\\EnceladusDemibold-mL18a.otf`).fontSize(20).text(`Total Views : ${totalViews}`).moveDown(0.1);
         doc.font(`${__dirname}\\fonts\\EnceladusDemibold-mL18a.otf`).fontSize(20).text(`Total Time to Finish Playlist : ${ans}`).moveDown(0.1);
 
         // Finalize PDF file
@@ -63,7 +64,12 @@ let linKOfPL = inputArr[0];
 })();
 
 function getTotalVideos(selector) {
-    return document.querySelector(selector).innerText;
+    return document.querySelector(selector)?.innerText;
+}
+
+function getTotalViews(selector) {
+    let views = document.querySelectorAll(selector)[1]?.innerText;
+    return views;
 }
 
 async function getCurrVideosLen() {
