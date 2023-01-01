@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer'); //importing the puppeteer
 const PDFDocument = require('pdfkit');
 const { calculate } = require('./totalWatchTime');
-
+const { print } = require('./playlistData.js');
 const fs = require('fs');
 
 let cTab;
@@ -41,6 +41,7 @@ let linKOfPL = inputArr[0];
         let ans = calculate(finalList);
         // Create a document
         const doc = new PDFDocument();
+
         // Pipe its output somewhere, like to a file or HTTP response
         doc.pipe(fs.createWriteStream(`${__dirname}/output.pdf`));
 
@@ -48,9 +49,9 @@ let linKOfPL = inputArr[0];
         doc.image(`${__dirname}\\images\\YTLogo.png`, 0, 15, { height: 200 }); //stretch
 
         doc.font(`${__dirname}\\fonts\\AmericanCaptain-MdEY.otf`).fontSize(30).text(name, 72, 220).moveDown(0.5);
-        doc.font(`${__dirname}\\fonts\\Louis George Cafe.ttf`).fontSize(15).text(JSON.stringify(finalList)).moveDown(0.4);
+        print(finalList, doc);
+        // doc.font(`${__dirname}\\fonts\\Louis George Cafe.ttf`).fontSize(15).text(JSON.stringify(finalList)).moveDown(0.4);
 
-        
         //append calculation like total no of videos, total watch time, no of views till now
         doc.font(`${__dirname}\\fonts\\EnceladusDemibold-mL18a.otf`).fontSize(20).text(`Total Videos : ${totalVideos}`).moveDown(0.1);
         doc.font(`${__dirname}\\fonts\\EnceladusDemibold-mL18a.otf`).fontSize(20).text(`Total Views : ${totalViews}`).moveDown(0.1);
@@ -105,10 +106,18 @@ function getNameAndDuration(videoSelector, durationSelector) {
         let videoTitle = videoElement[i].innerText;
         let duration = durationElement[i].innerText;
 
+        duration = duration.split(/\r?\n/);
+        let finalDuration;
+        if (duration.length > 1) {
+            finalDuration = duration[1].trim();
+        } else {
+            finalDuration = duration[0];
+        }
+
         currentList.push({
             serialNo,
             videoTitle,
-            duration
+            finalDuration
         })
     }
 

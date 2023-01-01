@@ -2,13 +2,8 @@ let timestamp = [];
 function calculate(list) {
     for (let i = 0; i < list.length; ++i) {
         let obj = list[i];
-        let duration = obj.duration.split(/\r?\n/);
-
-        if (duration.length > 1) {
-            timestamp.push(duration[1].trim());
-        } else {
-            timestamp.push(duration[0]);
-        }
+        let duration = obj.finalDuration;
+        timestamp.push(duration);
     }
 
     let totalHour = 0;
