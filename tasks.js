@@ -10,7 +10,7 @@ let cTab;
 // let inputArr = process.argv.slice(2);
 // let linKOfPL = inputArr[0];
 
-async function task(linKOfPL) {
+async function tasks(linKOfPL) {
     let args = Array.from(arguments);
     try {
         let browserOpen = puppeteer.launch({ //it will return the promise
@@ -44,7 +44,6 @@ async function task(linKOfPL) {
         let ans = calculate(finalList);
         // Create a document
         const doc = new PDFDocument();
-
         // Pipe its output somewhere, like to a file or HTTP response
         doc.pipe(fs.createWriteStream(`${__dirname}/output.pdf`));
 
@@ -135,5 +134,5 @@ async function getNameAndDuration(videoSelector, durationSelector) {
 }
 
 module.exports = {
-    task
+    tasks
 }

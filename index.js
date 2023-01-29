@@ -1,4 +1,4 @@
-const { task } = require('./task.js')
+const { tasks } = require('./tasks.js')
 const prompt = require('prompt-sync')();
 
 console.log("Operation");
@@ -15,15 +15,15 @@ let playListName = prompt('Enter the playlist link: ');
 let order;
 switch (ch) {
     case 1:
-        task(playListName);
+        tasks(playListName);
         break;
     case 2:
         order = prompt('Ascending or Descending order(Asc/Desc): ');
-        task(playListName, 'title', order.toLowerCase());
+        tasks(playListName, 'title', order.toLowerCase());
         break;
     case 3:
         order = prompt('Increasing or Decreasing order(Inc/Dec): ');
-        task(playListName, 'duration', order.toLowerCase());
+        tasks(playListName, 'duration', order.toLowerCase());
         break;
     default:
         console.log('Wrong Choice :((');
