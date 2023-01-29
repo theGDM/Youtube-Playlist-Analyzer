@@ -10,6 +10,7 @@ other hand Web scraping (or data scraping) is a technique used to collect conten
   while other can only process at max 500 videos at a time.
 - With the help of this project a user can get all the information like, playlist name, total videos, total views, title and duration of each and every 
   video of that particular playlist.
+- Also user can sort the playlist's data in ascending/descending order of the video's title or increasing/decreasing order of the video's duration.
 - After processing the whole playlist it will generate the information in PDF format
 - User has the options to change fonts and images as per his/her need.
 
@@ -28,19 +29,36 @@ other hand Web scraping (or data scraping) is a technique used to collect conten
   
 ## Website Demo
   > ### Folders and Files structure <br /> 
-  ![Screenshot 2022-10-24 120454](https://user-images.githubusercontent.com/89511377/197462868-7f45ad0e-73c8-4523-8940-1c665bb0943e.jpg)
+  ![Screenshot 2023-01-30 002306](https://user-images.githubusercontent.com/89511377/215349476-5072afbf-4fa7-4221-be57-55333845269e.jpg)
+
 
   > ### index.js file
-  ![Screenshot 2022-10-24 120143](https://user-images.githubusercontent.com/89511377/197462637-1e87b591-7805-4067-a7e8-ed36ba6062ed.jpg)
-  ![Screenshot 2022-10-24 120250](https://user-images.githubusercontent.com/89511377/197462662-143ee1fd-2713-48fb-87dd-ce49141e3a90.jpg)
+  ![Screenshot 2023-01-30 003720](https://user-images.githubusercontent.com/89511377/215349847-f42bf840-201f-463b-be99-5e2749b1e3a2.jpg)
   
+  > ### task.js file
+  ![Screenshot 2023-01-30 002529](https://user-images.githubusercontent.com/89511377/215349546-8c6eb317-caa9-4ca9-8d82-3e073925fc89.jpg)
+  ![Screenshot 2023-01-30 002653](https://user-images.githubusercontent.com/89511377/215349553-94965456-65dd-4d1f-bf48-6acbaa492465.jpg)
+
   > ### Total Watch Time calculating script
   ![Screenshot 2022-10-24 122243](https://user-images.githubusercontent.com/89511377/197465085-3923e6ec-dd95-40d9-80b3-a57e6cf6d6b8.jpg)
 
-  > ### PDF file "output.pdf" genrated, after processing the playlist
-  ![Screenshot 2022-10-24 120330](https://user-images.githubusercontent.com/89511377/197463526-0fddea03-365d-4649-8d69-b0923729a52d.jpg)
-  ![Screenshot 2022-10-24 120402](https://user-images.githubusercontent.com/89511377/197463552-f1e1db6a-1562-486c-a003-943d5fe2aaf0.jpg)
+  > ### Sorting Files
+  `Normal Sequence`
+  
+  ![Screenshot 2023-01-30 002846](https://user-images.githubusercontent.com/89511377/215349903-4bf0706b-1cb8-4ced-8d56-2e77cf056aae.jpg)
+  
+  `Sort by Video's Title`
+  
+  ![Screenshot 2023-01-30 002813](https://user-images.githubusercontent.com/89511377/215350021-ebe75428-82ec-40bd-a9b7-edc31b2e3748.jpg)
 
+  `Sort by Video's Duration`
+  
+  ![Screenshot 2023-01-30 002744](https://user-images.githubusercontent.com/89511377/215350157-070fd329-d713-46c4-9040-19e372309ead.jpg)
+
+  
+  > ### PDF file "output.pdf" genrated, after processing the playlist
+  ![Screenshot 2023-01-30 004603](https://user-images.githubusercontent.com/89511377/215350448-abfd37e0-4276-458f-8f77-402874c6d6e8.jpg)
+  ![Screenshot 2023-01-30 004630](https://user-images.githubusercontent.com/89511377/215350456-ae83016c-9069-4a38-aed8-23c8386690cb.jpg)
 
 # Hi, I'm theGDM! 👋
 ## 🚀 About Me
