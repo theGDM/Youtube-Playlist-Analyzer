@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "pdfkit": "^0.13.0",
+    "prompt-sync": "^4.2.0",
     "puppeteer": "^19.1.0"
   }
 }

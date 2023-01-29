@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-function print(data, doc) {
+function normalOrder(data, doc) {
     doc.pipe(fs.createWriteStream(`${__dirname}/output.pdf`));
     for (let i = 0; i < data.length; ++i) {
         let obj = data[i];
@@ -13,5 +13,5 @@ function print(data, doc) {
 }
 
 module.exports = {
-    print: print
+    normalOrder: normalOrder
 }
