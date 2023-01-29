@@ -8,7 +8,7 @@ other hand Web scraping (or data scraping) is a technique used to collect conten
 ## Features
 - Now one of the main benefits of using this youtube playlist analyzer over others, is that it can process n number of videos of any particular playlist
   while other can only process at max 500 videos at a time.
-- With the help of this project a user can get all the information like, playlist name, total videos, total views, title and duration of each and every 
+- With the help of this project a user can get all the information like, playlist name, total videos, total views, title, duration and views of each and every 
   video of that particular playlist.
 - Also user can sort the playlist's data in ascending/descending order of the video's title or increasing/decreasing order of the video's duration.
 - After processing the whole playlist it will generate the information in PDF format
