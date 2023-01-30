@@ -35,7 +35,7 @@ other hand Web scraping (or data scraping) is a technique used to collect conten
   > ### index.js file
   ![Screenshot 2023-01-30 003720](https://user-images.githubusercontent.com/89511377/215349847-f42bf840-201f-463b-be99-5e2749b1e3a2.jpg)
   
-  > ### task.js file
+  > ### tasks.js file
   ![Screenshot 2023-01-30 002529](https://user-images.githubusercontent.com/89511377/215349546-8c6eb317-caa9-4ca9-8d82-3e073925fc89.jpg)
   ![Screenshot 2023-01-30 002653](https://user-images.githubusercontent.com/89511377/215349553-94965456-65dd-4d1f-bf48-6acbaa492465.jpg)
 
@@ -55,7 +55,11 @@ other hand Web scraping (or data scraping) is a technique used to collect conten
   
   ![Screenshot 2023-01-30 002744](https://user-images.githubusercontent.com/89511377/215350157-070fd329-d713-46c4-9040-19e372309ead.jpg)
 
+  `Sort by Video's Duration`
   
+  ![Screenshot 2023-01-30 224206](https://user-images.githubusercontent.com/89511377/215552849-dadb0def-e818-4980-8329-91f877644489.jpg)
+  ![Screenshot 2023-01-30 224231](https://user-images.githubusercontent.com/89511377/215552905-d962fc81-d860-4337-b0f2-c8fd20186125.jpg)
+    
   > ### PDF file "output.pdf" genrated, after processing the playlist
   ![Screenshot 2023-01-30 004603](https://user-images.githubusercontent.com/89511377/215350448-abfd37e0-4276-458f-8f77-402874c6d6e8.jpg)
   ![Screenshot 2023-01-30 004630](https://user-images.githubusercontent.com/89511377/215350456-ae83016c-9069-4a38-aed8-23c8386690cb.jpg)
