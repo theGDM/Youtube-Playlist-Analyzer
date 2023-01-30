@@ -4,12 +4,10 @@ const { calculate } = require('./totalWatchTime');
 const { normalOrder } = require('./normalOrder.js');
 const { sortByTitle } = require('./sortByTitle.js');
 const { sortByDuration } = require('./sortByDuration.js');
+const { sortByViews } = require('./sortByViews.js');
 const fs = require('fs');
 
 let cTab;
-// let inputArr = process.argv.slice(2);
-// let linKOfPL = inputArr[0];
-
 async function tasks(linKOfPL) {
     let args = Array.from(arguments);
     try {
@@ -56,6 +54,8 @@ async function tasks(linKOfPL) {
             sortByTitle(finalList, args[2], doc);
         } else if (args[1] == 'duration') {
             sortByDuration(finalList, args[2], doc);
+        } else if (args[1] == 'views') {
+            sortByViews(finalList, args[2], doc);
         } else {
             normalOrder(finalList, doc);
         }
@@ -100,20 +100,21 @@ async function scrollToBottom() {
 }
 
 async function getStats() {
-    let list = await cTab.evaluate(getNameAndDuration, 'ytd-playlist-video-renderer #video-title', 'ytd-playlist-video-renderer #thumbnail #overlays #text');
+    let list = await cTab.evaluate(getNameAndDuration, 'ytd-playlist-video-renderer #video-title', 'ytd-playlist-video-renderer #thumbnail #overlays #text', '#metadata #video-info');
     return list;
 }
 
-async function getNameAndDuration(videoSelector, durationSelector) {
-    console.log("vrerv");
+async function getNameAndDuration(videoSelector, durationSelector, viewsSelector) {
     let videoElement = document.querySelectorAll(videoSelector);
     let durationElement = document.querySelectorAll(durationSelector);
+    let viewsElement = document.querySelectorAll(viewsSelector);
 
     let currentList = [];
     for (let i = 0; i < durationElement.length; ++i) {
         let serialNo = i + 1;
-        let videoTitle = videoElement[i].innerText;
-        let duration = durationElement[i].innerText;
+        let videoTitle = videoElement[i]?.innerText;
+        let duration = durationElement[i]?.innerText;
+        let views = viewsElement[i].querySelectorAll('span')[0]?.innerText;
 
         duration = duration.split(/\r?\n/);
         let finalDuration;
@@ -123,10 +124,12 @@ async function getNameAndDuration(videoSelector, durationSelector) {
             finalDuration = duration[0];
         }
 
+        views = views.split(' ')[0];
         currentList.push({
             serialNo,
             videoTitle,
-            finalDuration
+            finalDuration,
+            views
         })
     }
 

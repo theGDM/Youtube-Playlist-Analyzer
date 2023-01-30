@@ -2,13 +2,16 @@ const { tasks } = require('./tasks.js')
 const prompt = require('prompt-sync')();
 
 console.log("Operation");
-console.log(`1) Display in Sequence(As there in YT palylist)`);
+console.log(`1) Display in Sequence(As there in YT playlist)`);
 console.log(`2) Sort by Title`);
-console.log(`       - Ascending order`);
-console.log(`       - Descending order`);
+console.log(`         - Ascending order`);
+console.log(`         - Descending order`);
 console.log(`3) Sort by Duration`);
-console.log(`       - Increasing order`);
-console.log(`       - Decreasing order`);
+console.log(`         - Increasing order`);
+console.log(`         - Decreasing order`);
+console.log(`4) Sort by Number of views`);
+console.log(`         - Ascending order`);
+console.log(`         - Descending order`);
 
 let ch = parseInt(prompt('Tell me your choice: '));
 let playListName = prompt('Enter the playlist link: ');
@@ -25,7 +28,10 @@ switch (ch) {
         order = prompt('Increasing or Decreasing order(Inc/Dec): ');
         tasks(playListName, 'duration', order.toLowerCase());
         break;
+    case 4:
+        order = prompt('Ascending or Descending order(Asc/Desc): ');
+        tasks(playListName, 'views', order.toLowerCase());
+        break;
     default:
         console.log('Wrong Choice :((');
-        break;
 }

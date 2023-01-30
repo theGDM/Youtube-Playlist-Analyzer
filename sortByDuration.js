@@ -18,7 +18,8 @@ function sortByDuration(data, orderInput, doc) {
         let sNo = obj.serialNo;
         let title = obj.videoTitle;
         let duration = obj.finalDuration;
-        doc.font(`${__dirname}\\fonts\\Louis George Cafe.ttf`).fontSize(15).text(`${sNo}) ${title} (${duration})`).moveDown(0.4);
+        let views = obj.views;
+        doc.font(`${__dirname}\\fonts\\Louis George Cafe.ttf`).fontSize(15).text(`${sNo}) ${title} (${duration}) [${views}]`).moveDown(0.4);
         doc.lineTo(0, doc.page.width)
             .stroke();
     }
