@@ -4,7 +4,6 @@ This is a Web Automation project which also uses Web Scraping.<br/>
 Web automation is the concept of letting software robots perform pre-defined actions, tasks, and processes on a web browser or web application, and on the 
 other hand Web scraping (or data scraping) is a technique used to collect content and data from the internet. This data is usually saved in a local file so that it can be manipulated and analyzed as needed.
 
-
 ## Features
 - Now one of the main benefits of using this youtube playlist analyzer over others, is that it can process n number of videos of any particular playlist
   while other can only process at max 500 videos at a time.
